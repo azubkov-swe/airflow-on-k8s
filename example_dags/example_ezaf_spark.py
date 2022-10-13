@@ -32,7 +32,7 @@ with open('/var/run/secrets/kubernetes.io/serviceaccount/namespace', 'r') as fil
 # [START instantiate_dag]
 
 dag = DAG(
-    'spark_pi',
+    'ezaf_spark',
     default_args=default_args,
     schedule_interval=None,
     tags=['example', 'spark'],
