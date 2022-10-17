@@ -47,6 +47,7 @@ spec:
     volumeMounts:
       - mountPath: /mounts/data/
         name: spark-data
+    serviceAccount: hpe-{{params.namespace}}
   executor:
     # Needed if object store is Amazon S3
     # javaOptions: "-Djavax.net.ssl.trustStore=/etc/pki/java/cacerts"
