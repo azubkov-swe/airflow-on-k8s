@@ -1,7 +1,7 @@
 apiVersion: "sparkoperator.hpe.com/v1beta2"
 kind: SparkApplication
 metadata:
-  name: data-transfer-demo
+  name: ezaf-airflow-data-transfer-demo
   namespace: spark
 spec:
   sparkConf:
