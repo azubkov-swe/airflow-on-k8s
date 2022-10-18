@@ -62,4 +62,4 @@ spec:
   volumes:
     - name: spark-data
       persistentVolumeClaim:
-        claimName:  {{dag_run.conf.get("username", "mohan-rajagopalan")}}-spark-pvc
+        claimName:  {{dag_run.conf.get("username", "mohan")}}-spark-pvc
