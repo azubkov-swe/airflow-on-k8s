@@ -6,8 +6,8 @@ metadata:
 spec:
   sparkConf:
     spark.hadoop.fs.s3a.endpoint: "13.56.82.84:31900"
-    spark.hadoop.fs.s3a.access.key: "minioadmin2"
-    spark.hadoop.fs.s3a.secret.key: "minioadmin2"
+    spark.hadoop.fs.s3a.access.key: "minioadmin"
+    spark.hadoop.fs.s3a.secret.key: "minioadmin"
     spark.hadoop.fs.s3a.path.style.access: "true"
     spark.hadoop.fs.s3a.impl: "org.apache.hadoop.fs.s3a.S3AFileSystem"
     spark.hadoop.fs.s3a.connection.ssl.enabled: "true"
