@@ -2,7 +2,7 @@ apiVersion: "sparkoperator.hpe.com/v1beta2"
 kind: SparkApplication
 metadata:
   name: data-transfer-demo
-  namespace: airflow-hpe
+  namespace: spark
 spec:
   sparkConf:
     spark.hadoop.fs.s3a.endpoint: "13.56.82.84:31900"
@@ -23,7 +23,7 @@ spec:
   type: Scala
   sparkVersion: 3.2.0
   mode: cluster
-  image: gcr.io/mapr-252711/spark-demo-example:rc-1
+  image: gcr.io/mapr-252711/spark-demo-example:rc-2
   imagePullPolicy: Always
   mainApplicationFile: local:///tmp/SparkDemo.jar
   mainClass: com.mapr.sparkdemo.DataTransferDemo
@@ -62,4 +62,4 @@ spec:
   volumes:
     - name: spark-data
       persistentVolumeClaim:
-        claimName: kubeflow-shared-pvc
+        claimName:  {{dag_run.conf.get("username", "mohan-rajagopalan")}}-spark-pvc
