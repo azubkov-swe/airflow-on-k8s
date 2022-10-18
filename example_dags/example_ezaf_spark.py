@@ -16,22 +16,19 @@ default_args = {
     'retries': 3
 }
 
-with open('/var/run/secrets/kubernetes.io/serviceaccount/namespace', 'r') as file:
-    current_namespace = file.read()
-
 dag = DAG(
     'ezaf_spark',
     default_args=default_args,
     schedule_interval=None,
     tags=['example', 'ezaf', 'spark'],
     params={
-        'namespace': current_namespace,
+        'namespace': "spark",
     }
 )
 
 submit = SparkKubernetesOperator(
     task_id='ezaf_spark_submit',
-    namespace=current_namespace,
+    namespace="spark",
     application_file="example_ezaf_spark.yaml",
     kubernetes_conn_id="kubernetes_in_cluster",
     do_xcom_push=True,
@@ -42,7 +39,7 @@ submit = SparkKubernetesOperator(
 
 sensor = SparkKubernetesSensor(
     task_id='ezaf_spark_monitor',
-    namespace=current_namespace,
+    namespace="spark",
     application_name="{{ task_instance.xcom_pull(task_ids='ezaf_spark_submit')['metadata']['name'] }}",
     kubernetes_conn_id="kubernetes_in_cluster",
     dag=dag,
