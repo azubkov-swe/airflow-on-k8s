@@ -30,7 +30,7 @@ spec:
   arguments:
     - s3a://ezaf-demo/data/financial.csv          # source path
     - csv                                         # source format
-    - file:///mounts/data/datasets/financial.csv  # destination path
+    - file:///mounts/data/financial.csv  # destination path
     - csv                                         # destination format
   restartPolicy:
     type: Never
