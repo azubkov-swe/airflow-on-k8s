@@ -19,7 +19,7 @@ spec:
   mode: cluster
   image: gcr.io/mapr-252711/spark-demo-example:v1.0
   imagePullPolicy: Always
-  mainApplicationFile: local:///tmp/SparkDemo.jar
+  mainApplicationFile: local:///tmp/DataProcessTransfer.jar
   mainClass: com.mapr.sparkdemo.DataProcessTransfer
   arguments:
     - s3a://ezaf-demo/data/financial.csv
