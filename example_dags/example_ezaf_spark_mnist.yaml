@@ -24,7 +24,7 @@ spec:
   arguments:
     - s3a://ezaf-demo/data/mnist
     - binaryFile
-    - file:///mounts/data/mnist-spark-data
+    - file:///mounts/data/mnist-spark-data1
     - parquet
   restartPolicy:
     type: Never
